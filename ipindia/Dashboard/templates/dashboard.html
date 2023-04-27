@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.2/css/font-awesome.min.css" integrity="sha512-YgECeaX64EiXmgxPQZ88zsywLJBLNfuY1IpQiR6OXyLpEgLPXZq2JnfnTaHaAZ+1ADF3PzI2I8ma/ixR1jJUMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- Bootsrap Script -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'form1' %}">IPINDIA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'form1' %}">Form 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'form3' %}">Form 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'form15' %}">Form 15</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <h2 class='fw-bold'>Form 1</h2>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">SN</th>
+                    <th scope="col">A</th>
+                    <th scope="col">B</th>
+                    <th scope="col">type</th>
+                    <th scope="col">C</th>
+                    <th scope="col">D</th>
+                    <th scope="col">Registerd_in_Class</th>
+                    <th scope="col">Under_No</th>
+                    <th scope="col">E1</th>
+                    <th scope="col">E2</th>
+                    <th scope="col">E3</th>
+                    <th scope="col">E4</th>
+                    <th scope="col">F</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Declaration</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Month</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for data in datas %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{data.A}}</td>
+                            <td>{{data.B}}</td>
+                            <td>{{data.type}}</td>
+                            <td>{{data.C}}</td>
+                            <td>{{data.D}}</td>
+                            <td>{{data.Registerd_in_Class}}</td>
+                            <td>{{data.Under_No}}</td>
+                            <td>{{data.E1}}</td>
+                            <td>{{data.E2}}</td>
+                            <td>{{data.E3}}</td>
+                            <td>{{data.E4}}</td>
+                            <td>{{data.F}}</td>
+                            <td>{{data.Email}}</td>
+                            <td>{{data.Mobile}}</td>
+                            <td>{{data.Declaration}}</td>
+                            <td>{{data.Day}}</td>
+                            <td>{{data.Month}}</td>
+                            <td>{{data.Year}}</td>
+                            <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+
+                        </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</body>
+</html>
